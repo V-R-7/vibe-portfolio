@@ -33,12 +33,12 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
       </button>
 
       {/* Sidebar */}
-      <aside className={`fixed top-0 left-8 h-full w-48 bg-white/80 backdrop-blur-md z-40 transform transition-transform duration-300 ease-in-out ${
+      <aside className={`fixed top-0 left-0 h-full w-64 bg-white/80 backdrop-blur-md z-40 transform transition-transform duration-300 ease-in-out ${
         isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-      } md:translate-x-0 lg:left-12 xl:left-16`}>
+      } md:translate-x-0`}>
         <div className="flex flex-col h-full">
           {/* Navigation Menu */}
-          <nav className="flex-1 px-6 py-12">
+          <nav className="flex-1 px-6 py-8">
             <ul className="space-y-2">
               {menuItems.map((item) => (
                 <li key={item.id}>
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
                     onClick={() => handleSectionClick(item.id)}
                     className={`w-full text-left py-2 transition-all duration-200 text-sm font-light ${
                       activeSection === item.id 
-                        ? 'text-gray-900 font-normal' 
+                        ? 'text-gray-900 font-normal bg-gray-100' 
                         : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                     }`}
                   >
@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
       {/* Overlay for mobile */}
       {isSidebarOpen && (
         <div 
-          className="fixed inset-0 bg-black/30 z-30 md:hidden"
+          className="fixed inset-0 bg-black/20 z-30 md:hidden"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
