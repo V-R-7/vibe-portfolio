@@ -14,18 +14,17 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-800/95 backdrop-blur-sm">
       <nav className="section-padding container-width py-4">
-        <div className="flex items-center justify-between">
-          <div className="text-xl font-semibold text-gray-800">Portfolio</div>
+        <div className="flex items-center justify-center">
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-2">
             {['about', 'projects', 'certifications', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="text-gray-600 hover:text-gray-800 transition-colors duration-200 capitalize"
+                className="px-4 py-2 text-gray-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-all duration-200 capitalize"
               >
                 {item}
               </button>
@@ -34,7 +33,7 @@ const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-600 hover:text-gray-800 transition-colors"
+            className="md:hidden text-gray-300 hover:text-white transition-colors absolute right-6"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -43,12 +42,12 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-gray-100 animate-fade-in">
+          <div className="md:hidden mt-4 py-4 border-t border-slate-700 animate-fade-in">
             {['about', 'projects', 'certifications', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="block w-full text-left py-3 text-gray-600 hover:text-gray-800 transition-colors capitalize"
+                className="block w-full text-left py-3 px-4 text-gray-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors capitalize"
               >
                 {item}
               </button>
