@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="font-poppins min-h-screen overflow-hidden bg-gray-50">
       <Header activeSection={activeSection} onSectionChange={setActiveSection} />
-      <main className="h-screen md:ml-64">
+      <main className="h-screen md:ml-64 lg:ml-72 xl:ml-80">
         {renderActiveSection()}
       </main>
       {activeSection === 'contact' && <Footer />}
