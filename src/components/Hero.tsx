@@ -12,7 +12,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       <div className="container-width text-center">
         <div className="animate-fade-in">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-800 mb-6">
-            Hi, I'm <span className="font-medium text-gradient">Alex</span>
+            About <span className="font-medium text-gradient">Alex</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto font-light">
             A Frontend Developer crafting digital experiences with clean code and thoughtful design

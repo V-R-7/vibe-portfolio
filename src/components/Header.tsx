@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
   };
 
   const menuItems = [
-    { id: 'hero', label: 'Home' },
+    { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
     { id: 'certifications', label: 'Certifications' },
     { id: 'contact', label: 'Contact' }
@@ -37,14 +37,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
         isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
       } md:translate-x-0`}>
         <div className="flex flex-col h-full">
-          {/* Logo/Brand Area */}
-          <div className="p-8 border-b border-gray-200/50">
-            <h1 className="text-xl font-medium text-gray-800">Alex Johnson</h1>
-            <p className="text-sm text-gray-600 mt-1">Frontend Developer</p>
-          </div>
-
           {/* Navigation Menu */}
-          <nav className="flex-1 p-6">
+          <nav className="flex-1 p-8">
             <ul className="space-y-2">
               {menuItems.map((item) => (
                 <li key={item.id}>
@@ -62,13 +56,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               ))}
             </ul>
           </nav>
-
-          {/* Footer Area */}
-          <div className="p-6 border-t border-gray-200/50">
-            <p className="text-xs text-gray-500">
-              © 2024 Alex Johnson
-            </p>
-          </div>
         </div>
       </aside>
 

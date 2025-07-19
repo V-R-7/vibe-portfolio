@@ -7,10 +7,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState('about');
 
   const renderActiveSection = () => {
     switch (activeSection) {
+      case 'about':
+        return <Hero onNavigate={setActiveSection} />;
       case 'projects':
         return <Projects />;
       case 'certifications':
