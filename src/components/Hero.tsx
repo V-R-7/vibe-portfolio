@@ -1,13 +1,11 @@
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-const Hero: React.FC = () => {
-  const scrollToAbout = () => {
-    const element = document.getElementById('about');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+interface HeroProps {
+  onNavigate: (section: string) => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
   return (
     <section className="min-h-screen flex items-center justify-center section-padding">
@@ -20,7 +18,10 @@ const Hero: React.FC = () => {
             A Frontend Developer crafting digital experiences with clean code and thoughtful design
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <button className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200">
+            <button 
+              onClick={() => onNavigate('projects')}
+              className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200"
+            >
               View My Work
             </button>
             <button className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 hover:text-gray-800 transition-colors duration-200">
@@ -29,11 +30,12 @@ const Hero: React.FC = () => {
           </div>
         </div>
         
-        <button 
-          onClick={scrollToAbout}
-          className="animate-bounce text-gray-400 hover:text-gray-600 transition-colors duration-200"
+        <button
+          onClick={() => onNavigate('about')}
+          className="flex items-center gap-2 text-gray-400 hover:text-gray-600 transition-colors duration-200 animate-pulse"
         >
-          <ArrowDown size={24} />
+          <span className="text-sm">Learn more about me</span>
+          <ArrowRight size={16} />
         </button>
       </div>
     </section>
