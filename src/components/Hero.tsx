@@ -20,21 +20,21 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <button 
               onClick={() => onNavigate('projects')}
-              className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200"
+              className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all duration-200 hover:transform hover:-translate-y-0.5"
             >
               View My Work
             </button>
-            <button className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 hover:text-gray-800 transition-colors duration-200">
+            <button className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 hover:text-gray-800 transition-all duration-200 hover:transform hover:-translate-y-0.5">
               Download CV
             </button>
           </div>
         </div>
         
         <button
-          onClick={() => onNavigate('about')}
-          className="flex items-center gap-2 text-gray-400 hover:text-gray-600 transition-colors duration-200 animate-pulse"
+          onClick={() => onNavigate('projects')}
+          className="flex items-center gap-2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
         >
-          <span className="text-sm">Learn more about me</span>
+          <span className="text-sm">Explore my projects</span>
           <ArrowRight size={16} />
         </button>
       </div>

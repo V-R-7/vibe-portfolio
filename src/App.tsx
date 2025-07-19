@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
@@ -12,8 +11,6 @@ function App() {
 
   const renderActiveSection = () => {
     switch (activeSection) {
-      case 'about':
-        return <About />;
       case 'projects':
         return <Projects />;
       case 'certifications':
@@ -26,9 +23,9 @@ function App() {
   };
 
   return (
-    <div className="font-poppins min-h-screen overflow-hidden">
+    <div className="font-poppins min-h-screen overflow-hidden bg-gray-50">
       <Header activeSection={activeSection} onSectionChange={setActiveSection} />
-      <main className="h-screen">
+      <main className="h-screen md:ml-64">
         {renderActiveSection()}
       </main>
       {activeSection === 'contact' && <Footer />}

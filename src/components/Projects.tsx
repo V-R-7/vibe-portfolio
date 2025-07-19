@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center section-padding">
+    <section className="min-h-screen flex items-center justify-center section-padding bg-white">
       <div className="container-width">
         <div className="w-full">
           <h2 className="text-3xl sm:text-4xl font-light text-gray-800 mb-12 text-center">

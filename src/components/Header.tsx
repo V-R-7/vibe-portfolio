@@ -8,64 +8,78 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleSectionClick = (section: string) => {
     onSectionChange(section);
-    setIsMenuOpen(false);
+    setIsSidebarOpen(false);
   };
 
+  const menuItems = [
+    { id: 'hero', label: 'Home' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="section-padding container-width py-4">
-        <div className="flex items-center justify-center">
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
-            {['about', 'projects', 'certifications', 'contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => handleSectionClick(item)}
-                className={`px-4 py-2 rounded-lg transition-all duration-200 capitalize ${
-                  activeSection === item 
-                    ? 'text-white bg-slate-700/50' 
-                    : 'text-gray-300 hover:text-white hover:bg-slate-700/50'
-                }`}
-              >
-                {item}
-              </button>
-            ))}
+    <>
+      {/* Mobile Menu Button */}
+      <button
+        className="fixed top-6 left-6 z-50 md:hidden p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-gray-700 hover:text-gray-900 transition-colors"
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      >
+        {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
+      </button>
+
+      {/* Sidebar */}
+      <aside className={`fixed top-0 left-0 h-full w-64 bg-white/80 backdrop-blur-md border-r border-gray-200/50 z-40 transform transition-transform duration-300 ease-in-out ${
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      } md:translate-x-0`}>
+        <div className="flex flex-col h-full">
+          {/* Logo/Brand Area */}
+          <div className="p-8 border-b border-gray-200/50">
+            <h1 className="text-xl font-medium text-gray-800">Alex Johnson</h1>
+            <p className="text-sm text-gray-600 mt-1">Frontend Developer</p>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-gray-300 hover:text-white transition-colors absolute right-6"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Navigation Menu */}
+          <nav className="flex-1 p-6">
+            <ul className="space-y-2">
+              {menuItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => handleSectionClick(item.id)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
+                      activeSection === item.id 
+                        ? 'bg-gray-100 text-gray-900 font-medium' 
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Footer Area */}
+          <div className="p-6 border-t border-gray-200/50">
+            <p className="text-xs text-gray-500">
+              © 2024 Alex Johnson
+            </p>
+          </div>
         </div>
+      </aside>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 animate-fade-in">
-            {['about', 'projects', 'certifications', 'contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => handleSectionClick(item)}
-                className={`block w-full text-left py-3 px-4 rounded-lg transition-colors capitalize ${
-                  activeSection === item 
-                    ? 'text-white bg-slate-700/50' 
-                    : 'text-gray-300 hover:text-white hover:bg-slate-700/50'
-                }`}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        )}
-      </nav>
-    </header>
+      {/* Overlay for mobile */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 z-30 md:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+    </>
   );
 };
 
