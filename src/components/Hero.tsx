@@ -13,10 +13,12 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           {/* Main Introduction */}
           <div className="mb-8">
             <h1 className="text-4xl sm:text-5xl font-light text-gray-800 mb-6">
-              Alex Johnson
+              Vijay R 👋
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Hey, I'm Alex. I'm the <span className="font-medium text-gray-800">Frontend Developer</span> at <span className="font-medium text-gray-800">TechCorp</span> where my team helps businesses build faster, more engaging web experiences.
+              Seasoned Low Code Developer, expertized in OutSystems with extensive experience in building scalable, user-focused enterprise applications. 
+              With a strong foundation in rapid application delivery and a passion for clean architecture,
+              my journey blends rapid low-code solutions with robust custom logic—always striving for elegant, maintainable code.
             </p>
           </div>
 
@@ -24,8 +26,8 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           <div className="flex items-start gap-6 mb-8">
             <div className="w-16 h-16 bg-gray-300 rounded-full flex-shrink-0 overflow-hidden">
               <img 
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" 
-                alt="Alex Johnson"
+                src="https://cdn.dribbble.com/userupload/42781366/file/still-7a6e5f268abfd5e49d640194c8f28e6d.png?format=webp&resize=400x300&vertical=center" 
+                alt="VR"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -49,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           {/* Description */}
           <div className="mb-8">
             <p className="text-gray-600 leading-relaxed">
-              I'm a React.js specialist and help lead our frontend development initiatives. I'm passionate about modern web technologies and have created comprehensive solutions for e-commerce, SaaS platforms, and mobile-first applications. I'm an advocate for clean code and mentor junior developers in best practices.
+              
             </p>
           </div>
 
