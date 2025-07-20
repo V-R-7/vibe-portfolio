@@ -1,0 +1,12 @@
+{
+  "name": "vanilla-portfolio",
+  "version": "1.0.0",
+  "description": "A beautiful vanilla HTML/CSS/JS portfolio",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "start": "python -m http.server 3000"
+  },
+  "keywords": ["portfolio", "html", "css", "javascript"],
+  "author": "Vijay R",
+  "license": "MIT"
+}
