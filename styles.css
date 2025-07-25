@@ -107,8 +107,6 @@ body {
     color: #262626;
     transform: translateY(-1px);
 }
-/* */
-
 
 .nav-btn.active {
      color: #262626;
@@ -117,40 +115,6 @@ body {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     transform: scale(1.05); 
 }
-
-.nav-btn.active::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
-    border-radius: 12px;
-}
-
-.nav-btn span {
-    position: relative;
-    z-index: 10;
-}
-
-.nav-btn::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(to right, #262626, #404040);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav-btn:hover::after {
-    width: 100%;
-}
-
-.nav-btn.active::after {
-    width: 100%;
-}
-
 
 /* Overlay */
 .overlay {
