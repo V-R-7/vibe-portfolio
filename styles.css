@@ -138,8 +138,9 @@ body {
 /* Main Content */
 .main-content {
     height: 100vh;
-    margin-left: 0; /* Remove left margin */
     margin-top: 80px; /* Add top margin to account for fixed header */
+    display:flex;
+    justify-content: center;
 }
 
 
@@ -463,9 +464,6 @@ body {
 }
 
 /* Contact Section */
-#contact-section {
-    background-color: white;
-}
 
 .contact-content {
     max-width: 512px;
