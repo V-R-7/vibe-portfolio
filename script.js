@@ -40,34 +40,34 @@ function initializeNavigation() {
     }
 }
 
-// function navigateToSection(sectionName) {
-//     // Update active section
-//     activeSection = sectionName;
+function navigateToSection(sectionName) {
+    // Update active section
+    activeSection = sectionName;
     
-//     // Update navigation buttons
-//     navBtns.forEach(btn => {
-//         btn.classList.remove('active');
-//         if (btn.getAttribute('data-section') === sectionName) {
-//             btn.classList.add('active');
-//         }
-//     });
+    // Update navigation buttons
+    navBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-section') === sectionName) {
+            btn.classList.add('active');
+        }
+    });
     
-//     // Update sections
-//     sections.forEach(section => {
-//         section.classList.remove('active');
-//         if (section.id === `${sectionName}-section`) {
-//             section.classList.add('active');
-//         }
-//     });
+    // Update sections
+    sections.forEach(section => {
+        section.classList.remove('active');
+        if (section.id === `${sectionName}-section`) {
+            section.classList.add('active');
+        }
+    });
     
-//     // Close mobile menu if open
-//     if (isSidebarOpen) {
-//         closeMobileMenu();
-//     }
+    // Close mobile menu if open
+    if (isSidebarOpen) {
+        closeMobileMenu();
+    }
     
-//     // Update footer visibility
-//     updateFooterVisibility();
-// }
+    // Update footer visibility
+    updateFooterVisibility();
+}
 
 // Mobile Menu Functions
 function initializeMobileMenu() {
@@ -95,23 +95,23 @@ function toggleMobileMenu() {
     }
 }
 
-// function openMobileMenu() {
-//     isSidebarOpen = true;
-//     sidebar.classList.add('open');
-//     overlay.classList.add('show');
-//     menuIcon.style.display = 'none';
-//     closeIcon.style.display = 'block';
+function openMobileMenu() {
+    isSidebarOpen = true;
+    sidebar.classList.add('open');
+    overlay.classList.add('show');
+    menuIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
     
-//     // Prevent body scroll
-//     document.body.style.overflow = 'hidden';
-// }
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
 
-// function closeMobileMenu() {
-//     isSidebarOpen = false;
-//     sidebar.classList.remove('open');
-//     overlay.classList.remove('show');
-//     menuIcon.style.display = 'block';
-//     closeIcon.style.display = 'none';
+function closeMobileMenu() {
+    isSidebarOpen = false;
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+    menuIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
     
     // Restore body scroll
     document.body.style.overflow = '';
@@ -260,61 +260,3 @@ const debouncedResize = debounce(function() {
 }, 250);
 
 window.addEventListener('resize', debouncedResize);
-
-// latest changes 
-// Add smooth scroll offset for the fixed header
-function navigateToSection(sectionName) {
-    // Update active section
-    activeSection = sectionName;
-    
-    // Update navigation buttons
-    navBtns.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-section') === sectionName) {
-            btn.classList.add('active');
-        }
-    });
-    
-    // Update sections
-    sections.forEach(section => {
-        section.classList.remove('active');
-        if (section.id === `${sectionName}-section`) {
-            section.classList.add('active');
-            
-            // Smooth scroll to section with header offset
-            const headerHeight = document.querySelector('.sidebar').offsetHeight;
-            const sectionTop = section.offsetTop - headerHeight;
-            window.scrollTo({
-                top: sectionTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-    
-    // Close mobile menu if open
-    if (isSidebarOpen) {
-        closeMobileMenu();
-    }
-    
-    // Update footer visibility
-    updateFooterVisibility();
-}
-
-// Update mobile menu behavior for top navigation
-function openMobileMenu() {
-    isSidebarOpen = true;
-    sidebar.classList.add('open');
-    overlay.classList.add('show');
-    menuIcon.style.display = 'none';
-    closeIcon.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-function closeMobileMenu() {
-    isSidebarOpen = false;
-    sidebar.classList.remove('open');
-    overlay.classList.remove('show');
-    menuIcon.style.display = 'block';
-    closeIcon.style.display = 'none';
-    document.body.style.overflow = '';
-}
