@@ -392,6 +392,7 @@ body {
 
 /* Certifications Section */
 #certifications-section {
+    width:100%;
     background-color: #fafafa;
 }
 
