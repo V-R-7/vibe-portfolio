@@ -310,9 +310,6 @@ body {
 }
 
 /* Projects Section */
-#projects-section {
-    background-color: white;
-}
 
 .projects-grid {
     display: grid;
