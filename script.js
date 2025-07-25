@@ -40,34 +40,34 @@ function initializeNavigation() {
     }
 }
 
-function navigateToSection(sectionName) {
-    // Update active section
-    activeSection = sectionName;
+// function navigateToSection(sectionName) {
+//     // Update active section
+//     activeSection = sectionName;
     
-    // Update navigation buttons
-    navBtns.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-section') === sectionName) {
-            btn.classList.add('active');
-        }
-    });
+//     // Update navigation buttons
+//     navBtns.forEach(btn => {
+//         btn.classList.remove('active');
+//         if (btn.getAttribute('data-section') === sectionName) {
+//             btn.classList.add('active');
+//         }
+//     });
     
-    // Update sections
-    sections.forEach(section => {
-        section.classList.remove('active');
-        if (section.id === `${sectionName}-section`) {
-            section.classList.add('active');
-        }
-    });
+//     // Update sections
+//     sections.forEach(section => {
+//         section.classList.remove('active');
+//         if (section.id === `${sectionName}-section`) {
+//             section.classList.add('active');
+//         }
+//     });
     
-    // Close mobile menu if open
-    if (isSidebarOpen) {
-        closeMobileMenu();
-    }
+//     // Close mobile menu if open
+//     if (isSidebarOpen) {
+//         closeMobileMenu();
+//     }
     
-    // Update footer visibility
-    updateFooterVisibility();
-}
+//     // Update footer visibility
+//     updateFooterVisibility();
+// }
 
 // Mobile Menu Functions
 function initializeMobileMenu() {
