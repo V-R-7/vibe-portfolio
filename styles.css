@@ -50,14 +50,9 @@ body {
     left: 0;
     width: 100%; /* Changed from 256px to full width */
     height: auto; /* Changed from 100vh to auto */
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-    backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Changed from border-right to border-bottom */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     z-index: 40;
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;
-    padding: 1rem;
 }
 
 
@@ -118,9 +113,9 @@ body {
 .nav-btn.active {
      color: #262626;
     font-weight: 500;
-/*     background: linear-gradient(to right, #262626, #404040);
+    background: linear-gradient(to right, #262626, #404040);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05); */
+    transform: scale(1.05); 
 }
 
 .nav-btn.active::before {
