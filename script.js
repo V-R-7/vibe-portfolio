@@ -95,23 +95,23 @@ function toggleMobileMenu() {
     }
 }
 
-function openMobileMenu() {
-    isSidebarOpen = true;
-    sidebar.classList.add('open');
-    overlay.classList.add('show');
-    menuIcon.style.display = 'none';
-    closeIcon.style.display = 'block';
+// function openMobileMenu() {
+//     isSidebarOpen = true;
+//     sidebar.classList.add('open');
+//     overlay.classList.add('show');
+//     menuIcon.style.display = 'none';
+//     closeIcon.style.display = 'block';
     
-    // Prevent body scroll
-    document.body.style.overflow = 'hidden';
-}
+//     // Prevent body scroll
+//     document.body.style.overflow = 'hidden';
+// }
 
-function closeMobileMenu() {
-    isSidebarOpen = false;
-    sidebar.classList.remove('open');
-    overlay.classList.remove('show');
-    menuIcon.style.display = 'block';
-    closeIcon.style.display = 'none';
+// function closeMobileMenu() {
+//     isSidebarOpen = false;
+//     sidebar.classList.remove('open');
+//     overlay.classList.remove('show');
+//     menuIcon.style.display = 'block';
+//     closeIcon.style.display = 'none';
     
     // Restore body scroll
     document.body.style.overflow = '';
