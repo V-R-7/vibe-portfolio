@@ -1,6 +1,6 @@
 # Vanilla Portfolio Website
 
-A beautiful, responsive portfolio website built with pure HTML, CSS, and JavaScript.
+A responsive portfolio website built with pure HTML, CSS, and JavaScript using Claude.
 
 ## How to Run
 
